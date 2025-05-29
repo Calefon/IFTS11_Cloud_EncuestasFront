@@ -1,1 +1,27 @@
 
+<h1>Encuesta id: {{encuestaId}}</h1>
+
+@for (pregunta of encuesta.questions; track pregunta.questionId){
+<div class="preguntaDiv">
+    <!--Para despues <ng-container *ngComponentOutlet=></ng-container>-->
+    @let preguntaId = pregunta.questionId;
+    @switch (pregunta.type){
+        @case ("options-radio"){
+            <label for={{preguntaId}}>{{pregunta.questionText}}</label>
+            @for (opcion of pregunta.options; track $index){
+                <div>
+                <input type="radio" id="opcion-{{preguntaId}}-{{$index}}" name="opcion-{{preguntaId}}" value={{opcion}}>
+                <label for="opcion-{{preguntaId}}-{{$index}}">{{opcion}}</label>
+                </div>
+            }
+        }
+        @case ("open"){
+            <div>
+            <label for={{preguntaId}}>{{pregunta.questionText}}</label>
+            <br>
+            <input id={{preguntaId}} type="text">
+            </div>
+        }
+    }
+</div>    
+}@empty {<li>There are no items.</li>}

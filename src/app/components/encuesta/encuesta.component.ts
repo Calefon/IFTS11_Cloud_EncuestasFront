@@ -10,9 +10,9 @@ import { EncuestasServiceService } from '../../services/encuestas-service.servic
 })
 export class EncuestaComponent{
   private route = inject(ActivatedRoute);
-  private encuestaId : string | undefined;
+  public encuestaId : string | undefined;
   private encuestasService = inject(EncuestasServiceService);
-  private encuesta: any
+  public encuesta: any
 
   constructor(){
     this.route.params.subscribe((params) => {  
