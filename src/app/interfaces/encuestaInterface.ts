@@ -9,7 +9,7 @@ export interface Encuesta{
   InquiroPK:string,
   fechaCreacion:string,
   preguntas:Pregunta[],
-  InquieroSK:string
+  InquiroSK:string
 }
 
 export interface Pregunta{
