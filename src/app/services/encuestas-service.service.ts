@@ -2,6 +2,7 @@ import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { EncuestaResponse } from '../interfaces/encuestaInterface';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import { EncuestaResponse } from '../interfaces/encuestaInterface';
 export class EncuestasServiceService {
 
   private http = inject(HttpClient)
-  private encuestasApi = 'http://inquiro-env-1.eba-fzt6xm2r.us-east-1.elasticbeanstalk.com/encuestas';
+  private encuestasApi = environment.INQUIRO_API_LINK + '/encuestas';
   constructor() { }
 
   getEncuesta(id : string) : Observable<EncuestaResponse>{
