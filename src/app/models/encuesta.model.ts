@@ -1,17 +1,17 @@
 
-export interface EncuestaResponse{
-  encuesta: Encuesta[]
+export interface IEncuestaResponse{
+  encuesta: IEncuesta[]
 }
 
-export interface Encuesta{
+export interface IEncuesta{
   titulo:string,
   InquiroPK:string,
   fechaCreacion:string,
-  preguntas:Pregunta[],
+  preguntas: IPregunta[],
   InquiroSK:string
 }
 
-export interface Pregunta{
+export interface IPregunta{
   tipoPregunta:string,
   opciones:string[],
   pregunta:string

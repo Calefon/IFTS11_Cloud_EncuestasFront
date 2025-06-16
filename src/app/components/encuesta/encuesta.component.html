@@ -2,6 +2,7 @@
 <h1>Encuesta id: {{encuestaId}}</h1>
 
 @for (pregunta of encuesta.preguntas; track $index){
+@let qIndex = $index;
 <div class="preguntaDiv">
     <!--Para despues <ng-container *ngComponentOutlet=></ng-container>-->
     @let preguntaId = "preguntaId-"+$index;
@@ -10,7 +11,7 @@
             <label for={{preguntaId}}>{{pregunta.pregunta}}</label>
             @for (opcion of pregunta.opciones; track $index){
                 <div>
-                <input type="radio" id="opcion-{{preguntaId}}-{{$index}}" name="opcion-{{preguntaId}}" value={{opcion}}>
+                <input type="radio" id="opcion-{{preguntaId}}-{{$index}}" name="opcion-{{preguntaId}}" value={{opcion}} [(ngModel)]="respuesta.respuestas[qIndex].respuesta">
                 <label for="opcion-{{preguntaId}}-{{$index}}">{{opcion}}</label>
                 </div>
             }
@@ -19,7 +20,7 @@
             <div>
             <label for={{preguntaId}}>{{pregunta.pregunta}}</label>
             <br>
-            <input id={{preguntaId}} type="text">
+            <input id={{preguntaId}} type="text" [(ngModel)]="respuesta.respuestas[qIndex].respuesta">
             </div>
         }
     }
