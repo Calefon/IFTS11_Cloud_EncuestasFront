@@ -37,9 +37,12 @@ export class EncuestaComponent implements OnInit{
         this.encuestasService.getEncuesta(this.encuestaId).subscribe(
           {
             next: resp => {
+                  
                   this.encuesta = resp.encuesta[0];
+                  
                   this.respuesta.respuestaInquiroPK = this.encuesta.InquiroPK;
                   let respArray : IRespData[] = [];
+                  
     
                   for(let i = 0; i < this.encuesta.preguntas.length; i++){
                     let resp : IRespData = <IRespData>{};
@@ -47,7 +50,7 @@ export class EncuestaComponent implements OnInit{
                     respArray.push(resp);
                   }
                   this.respuesta.respuestas = respArray;
-                },
+            },
             error: err => {
               console.error(err);
               this._router.navigate(['/not-found'])
@@ -56,7 +59,7 @@ export class EncuestaComponent implements OnInit{
           
         )
       }
-      console.log(this.encuesta);
+
     });
   }
 
