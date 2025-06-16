@@ -1,8 +1,11 @@
 import { Routes } from '@angular/router';
 import { EncuestaComponent } from './components/encuesta/encuesta.component';
+import { EncuestaEnviadaComponent } from './components/encuesta-enviada/encuesta-enviada.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 export const routes: Routes = [
-    {path: '', redirectTo: '/not-found', pathMatch: 'full'},
-    { path: ':id', component: EncuestaComponent},
-
+    {path: 'not-found', component: NotFoundComponent, pathMatch: 'full'},
+    {path: ':id', component: EncuestaComponent},
+    {path: 'encuesta-enviada', component: EncuestaEnviadaComponent},
+    {path: '**', redirectTo: '/not-found'}  
 ];

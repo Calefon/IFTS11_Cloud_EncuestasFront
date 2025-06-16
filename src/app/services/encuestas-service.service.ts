@@ -10,19 +10,20 @@ import { IRespuesta } from '../models/respuesta.model';
 })
 export class EncuestasServiceService {
 
-  private http = inject(HttpClient)
-  private encuestasApi = environment.INQUIRO_API_LINK + '/encuestas';
+  private _http = inject(HttpClient)
+  private _encuestasApiEndpoint = environment.INQUIRO_API_LINK + '/encuestas';
+  private _respuestasApiEndpoint = environment.INQUIRO_API_LINK + `/respuestas`;
   constructor() { }
 
   getEncuesta(id : string) : Observable<IEncuestaResponse>{
     let emailPrueba = 'prueba@gmail.com'
-    let linkReq = this.encuestasApi+`/email/${emailPrueba}/id/${id}`
-    return this.http.get<IEncuestaResponse>(linkReq);
+    let linkReq = this._encuestasApiEndpoint+`/email/${emailPrueba}/id/${id}`
+    return this._http.get<IEncuestaResponse>(linkReq);
   }
   
   postRespuesta(respuesta : IRespuesta){
-    let linkReq = this.encuestasApi+`/respuestas`
-    return this.http.post<IRespuesta>(linkReq,respuesta);
+    let linkReq = this._respuestasApiEndpoint
+    return this._http.post<IRespuesta>(linkReq,respuesta);
   }
 }
 

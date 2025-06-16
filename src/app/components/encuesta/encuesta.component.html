@@ -1,6 +1,4 @@
 
-<h1>Encuesta id: {{encuestaId}}</h1>
-
 @for (pregunta of encuesta.preguntas; track $index){
 @let qIndex = $index;
 <div class="preguntaDiv">
@@ -24,5 +22,8 @@
             </div>
         }
     }
-</div>    
-}@empty {<li>There are no items.</li>}
+</div>
+}@empty {
+    <h3>Cargando...</h3>
+}
+<button type="submit" (click)="enviarRespuesta()">Enviar!</button>

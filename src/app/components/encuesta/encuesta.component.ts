@@ -1,11 +1,10 @@
-import { Component, inject, OnChanges } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, inject, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EncuestasServiceService } from '../../services/encuestas-service.service';
-import { IEncuestaResponse, IEncuesta, IPregunta } from '../../models/encuesta.model';
+import { IEncuesta } from '../../models/encuesta.model';
 import { IRespData, IRespuesta } from '../../models/respuesta.model';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-encuesta',
@@ -13,8 +12,9 @@ import { SimpleChanges } from '@angular/core';
   templateUrl: './encuesta.component.html',
   styleUrl: './encuesta.component.css',
 })
-export class EncuestaComponent{
+export class EncuestaComponent implements OnInit{
   private route = inject(ActivatedRoute);
+  private _router = inject(Router)
   public encuestaId : string | undefined;
   private encuestasService = inject(EncuestasServiceService);
   public encuesta: IEncuesta = <IEncuesta>{};
@@ -27,7 +27,11 @@ export class EncuestaComponent{
       respuestaInquiroPK: "",
       respuestas: <IRespData[]>[] 
     };
-    this.route.params.subscribe((params) => {  
+  }
+
+  ngOnInit(){
+    this.route.params.subscribe(
+      (params) => {  
       this.encuestaId = params['id'];
       if(this.encuestaId){
         this.encuestasService.getEncuesta(this.encuestaId).subscribe(
@@ -44,7 +48,10 @@ export class EncuestaComponent{
                   }
                   this.respuesta.respuestas = respArray;
                 },
-            error: err => console.error(err)
+            error: err => {
+              console.error(err);
+              this._router.navigate(['/not-found'])
+            }
           }
           
         )
@@ -54,6 +61,7 @@ export class EncuestaComponent{
   }
 
   enviarRespuesta(){
+    console.log(this.respuesta)
     this.encuestasService.postRespuesta(this.respuesta).subscribe(
       {
         next: resp => console.log(resp),
