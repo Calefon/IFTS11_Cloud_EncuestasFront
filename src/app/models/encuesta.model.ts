@@ -1,5 +1,4 @@
 
-
 export interface EncuestaResponse{
   encuesta: Encuesta[]
 }

@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { EncuestasServiceService } from '../../services/encuestas-service.service';
-import { EncuestaResponse, Encuesta, Pregunta } from '../../interfaces/encuestaInterface';
+import { EncuestaResponse, Encuesta, Pregunta } from '../../models/encuesta.model';
 
 @Component({
   selector: 'app-encuesta',

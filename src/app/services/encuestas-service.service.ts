@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { EncuestaResponse } from '../interfaces/encuestaInterface';
+import { EncuestaResponse } from '../models/encuesta.model';
 import { environment } from '../../environments/environment';
 
 @Injectable({
@@ -17,6 +17,10 @@ export class EncuestasServiceService {
     let emailPrueba = 'prueba@gmail.com'
     let linkReq = this.encuestasApi+`/email/${emailPrueba}/id/${id}`
     return this.http.get<EncuestaResponse>(linkReq);
-  }  
+  }
+  
+  postRespuesta(){
+
+  }
 }
 
