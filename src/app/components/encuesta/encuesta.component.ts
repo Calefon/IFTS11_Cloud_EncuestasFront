@@ -5,10 +5,11 @@ import { IEncuesta } from '../../models/encuesta.model';
 import { IRespData, IRespuesta } from '../../models/respuesta.model';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { HeaderComponentComponent } from '../header-component/header-component.component';
 
 @Component({
   selector: 'app-encuesta',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, HeaderComponentComponent],
   templateUrl: './encuesta.component.html',
   styleUrl: './encuesta.component.css',
 })
@@ -24,25 +25,25 @@ export class EncuestaComponent implements OnInit{
   constructor(){
     this.respuesta = <IRespuesta>{
       respuestaInquiroPK: "",
-      respuestas: <IRespData[]>[] 
+      respuestas: <IRespData[]>[]
     };
   }
 
   ngOnInit(){
     this.route.params.subscribe(
-      (params) => {  
+      (params) => {
       this.encuestaId = params['id'];
       if(this.encuestaId){
         this.encuestasService.getEncuesta(this.encuestaId).subscribe(
           {
             next: resp => {
-                  
+
                   this.encuesta = resp.encuesta[0];
-                  
+
                   this.respuesta.respuestaInquiroPK = this.encuesta.InquiroPK;
                   let respArray : IRespData[] = [];
-                  
-    
+
+
                   for(let i = 0; i < this.encuesta.preguntas.length; i++){
                     let resp : IRespData = <IRespData>{};
                     resp.pregunta = this.encuesta.preguntas[i].pregunta;
@@ -55,7 +56,7 @@ export class EncuestaComponent implements OnInit{
               this._router.navigate(['/not-found'])
             }
           }
-          
+
         )
       }
 
@@ -75,5 +76,5 @@ export class EncuestaComponent implements OnInit{
     )
   }
 
-  
+
 }
