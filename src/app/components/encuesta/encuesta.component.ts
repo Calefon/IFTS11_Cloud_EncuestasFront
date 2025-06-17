@@ -1,32 +1,79 @@
-import { Component, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, inject, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EncuestasServiceService } from '../../services/encuestas-service.service';
-import { EncuestaResponse, Encuesta, Pregunta } from '../../interfaces/encuestaInterface';
+import { IEncuesta } from '../../models/encuesta.model';
+import { IRespData, IRespuesta } from '../../models/respuesta.model';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-encuesta',
-  imports: [],
+  imports: [CommonModule, FormsModule],
   templateUrl: './encuesta.component.html',
   styleUrl: './encuesta.component.css',
 })
-export class EncuestaComponent{
+export class EncuestaComponent implements OnInit{
   private route = inject(ActivatedRoute);
+  private _router = inject(Router)
   public encuestaId : string | undefined;
   private encuestasService = inject(EncuestasServiceService);
-  public encuesta: Encuesta = <Encuesta>{};
+  public encuesta: IEncuesta = <IEncuesta>{};
+  public respuesta: IRespuesta;
+
 
   constructor(){
-    this.route.params.subscribe((params) => {  
+    this.respuesta = <IRespuesta>{
+      respuestaInquiroPK: "",
+      respuestas: <IRespData[]>[] 
+    };
+  }
+
+  ngOnInit(){
+    this.route.params.subscribe(
+      (params) => {  
       this.encuestaId = params['id'];
       if(this.encuestaId){
         this.encuestasService.getEncuesta(this.encuestaId).subscribe(
-          resp => {
-            this.encuesta = resp.encuesta[0]
+          {
+            next: resp => {
+                  
+                  this.encuesta = resp.encuesta[0];
+                  
+                  this.respuesta.respuestaInquiroPK = this.encuesta.InquiroPK;
+                  let respArray : IRespData[] = [];
+                  
+    
+                  for(let i = 0; i < this.encuesta.preguntas.length; i++){
+                    let resp : IRespData = <IRespData>{};
+                    resp.pregunta = this.encuesta.preguntas[i].pregunta;
+                    respArray.push(resp);
+                  }
+                  this.respuesta.respuestas = respArray;
+            },
+            error: err => {
+              console.error(err);
+              this._router.navigate(['/not-found'])
+            }
           }
+          
         )
       }
-      console.log(this.encuesta);
+
     });
   }
+
+  enviarRespuesta(){
+    console.log(this.respuesta)
+    this.encuestasService.postRespuesta(this.respuesta).subscribe(
+      {
+        next: resp => {
+          console.log(resp)
+          this._router.navigate(['/encuesta-enviada'])
+        },
+        error: err => console.error(err)
+      }
+    )
+  }
+
   
 }
