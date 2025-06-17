@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
+import { HeaderComponentComponent } from '../header-component/header-component.component';
 
 @Component({
   selector: 'app-not-found',
-  imports: [],
+  imports: [HeaderComponentComponent],
   templateUrl: './not-found.component.html',
-  styleUrl: './not-found.component.css'
 })
 export class NotFoundComponent {
 
