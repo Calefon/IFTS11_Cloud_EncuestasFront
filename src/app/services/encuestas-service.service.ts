@@ -16,8 +16,7 @@ export class EncuestasServiceService {
   constructor() { }
 
   getEncuesta(id : string) : Observable<IEncuestaResponse>{
-    let emailPrueba = 'prueba@gmail.com'
-    let linkReq = this._encuestasApiEndpoint+`/email/${emailPrueba}/id/${id}`
+    let linkReq = this._encuestasApiEndpoint+`/${id}`
     return this._http.get<IEncuestaResponse>(linkReq);
   }
   
