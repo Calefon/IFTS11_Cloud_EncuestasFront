@@ -20,7 +20,6 @@ export class EncuestaComponent implements OnInit{
   public encuesta: IEncuesta = <IEncuesta>{};
   public respuesta: IRespuesta;
 
-  //http://localhost:4200/fc93ff08-d020-4e0f-857f-66a5bc0f07b1
 
   constructor(){
     this.respuesta = <IRespuesta>{
@@ -67,7 +66,10 @@ export class EncuestaComponent implements OnInit{
     console.log(this.respuesta)
     this.encuestasService.postRespuesta(this.respuesta).subscribe(
       {
-        next: resp => console.log(resp),
+        next: resp => {
+          console.log(resp)
+          this._router.navigate(['/encuesta-enviada'])
+        },
         error: err => console.error(err)
       }
     )
