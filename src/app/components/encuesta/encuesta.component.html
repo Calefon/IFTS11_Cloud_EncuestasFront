@@ -1,20 +1,22 @@
 <div class="flex flex-col w-full h-screen">
   <app-header-component></app-header-component>
   <main
-    class="flex flex-col gap-3 items-center justify-center w-full h-full bg-gray-200"
+    class="flex flex-col gap-3 items-center justify-center w-full h-full bg-gray-200 dark:bg-indigo-950"
   >
-    <form class="flex flex-col items-center justify-around w-full h-full">
+    <form class="flex flex-col items-center justify-evenly w-full h-full">
       <section
-        class="flex flex-col gap-8 items-center bg-white w-3/4 h-5/6 px-5 py-8 rounded-2xl mt-3 overflow-y-scroll scroll-hidden"
+        class="flex flex-col gap-8 items-center w-3/4 h-[70%] mt-3 overflow-y-scroll scroll-hidden"
       >
-        <div class="flex flex-col w-3/4">
-          <h2 class="text-2xl font-medium">
-            Titulo de la encuesta:
-            <span class="font-normal">dadfdasdasdas</span>
+        <div
+          class="flex flex-col w-3/4 gap-4 bg-white/30 backdrop-blur-2xl rounded-4xl px-5 py-8 dark:bg-white/10"
+        >
+          <h2 class="text-xl font-bold dark:text-white">
+            {{ "title" | transloco }}
+            <span class="text-xm font-normal">dadfdasdasdas</span>
           </h2>
-          <h3 class="text-2xl font-medium">
-            Descripción de la encuesta:
-            <span class="font-normal">dadfdasdasdas</span>
+          <h3 class="text-xl font-bold dark:text-white">
+            {{ "description" | transloco }}
+            <span class="text-xm font-normal">dadfdasdasdas</span>
           </h3>
         </div>
 
@@ -25,15 +27,19 @@
           <!--Para despues <ng-container *ngComponentOutlet=></ng-container>-->
           @let preguntaId = "preguntaId-"+$index; @switch(pregunta.tipoPregunta)
           { @case ("opciones_radio"){
-          <div class="flex flex-col gap-3 w-full">
-            <label class="font-medium text-2xl" for="{{ preguntaId }}">{{
-              pregunta.pregunta
-            }}</label>
+          <div
+            class="flex flex-col gap-3 w-full bg-white/30 backdrop-blur-2xl rounded-4xl px-5 py-8 dark:bg-white/10"
+          >
+            <label
+              class="font-bold text-xl dark:text-white"
+              for="{{ preguntaId }}"
+              >{{ pregunta.pregunta }}</label
+            >
 
             @for (opcion of pregunta.opciones; track $index){
-            <div class="w-full flex flex-row items-center">
+            <div class="w-full flex flex-row items-center dark:text-white">
               <input
-                class="text-sm sm:text-base ms-1"
+                class="text-xm ms-1"
                 type="radio"
                 id="opcion-{{ preguntaId }}-{{ $index }}"
                 name="opcion-{{ preguntaId }}"
@@ -41,7 +47,7 @@
                 [(ngModel)]="respuesta.respuestas[qIndex].respuesta"
               />
               <label
-                class="text-sm sm:text-base ms-2"
+                class="text-xm ms-2"
                 for="opcion-{{ preguntaId }}-{{ $index }}"
                 >{{ opcion }}</label
               >
@@ -51,12 +57,14 @@
 
           } @case ("abierta"){
 
-          <div class="flex flex-col gap-3 w-full">
-            <label class="font-medium text-2xl" for="{{ preguntaId }}">{{
+          <div
+            class="flex flex-col gap-3 w-full bg-white/30 backdrop-blur-2xl rounded-4xl px-5 py-8 dark:bg-white/10 dark:text-white"
+          >
+            <label class="font-medium text-xl" for="{{ preguntaId }}">{{
               pregunta.pregunta
             }}</label>
             <textarea
-              class="border-gray-300 border rounded-2xl outline-gray-300 text-start w-full h-14 sm:h-32 sm:text-base px-3 py-2"
+              class="border-gray-300 border rounded-2xl outline-gray-300 text-start w-full h-14 sm:h-32 text-xm px-3 py-2"
               id="{{ preguntaId }}"
               name="{{ preguntaId }}"
               type="text"
@@ -68,16 +76,16 @@
         </div>
 
         }@empty {
-        <h3>Cargando...</h3>
+        <h3>{{ "loading" | transloco }}</h3>
         }
       </section>
 
       <button
-        class="bg-purple-700 text-white hover:text-gray-200 font-bold px-6 py-3 rounded-2xl cursor-pointer text-xl"
+        class="bg-purple-600 text-white hover:text-gray-200 hover:bg-purple-700 font-bold px-6 py-3 rounded-2xl cursor-pointer text-xl"
         type="submit"
         (click)="enviarRespuesta()"
       >
-        Enviar
+        {{ "send" | transloco }}
       </button>
     </form>
   </main>

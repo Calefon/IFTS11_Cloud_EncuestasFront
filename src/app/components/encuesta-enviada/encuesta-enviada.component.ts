@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { HeaderComponentComponent } from '../header-component/header-component.component';
+import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-encuesta-enviada',
-  imports: [HeaderComponentComponent],
+  imports: [HeaderComponentComponent, TranslocoModule],
   templateUrl: './encuesta-enviada.component.html',
-  styleUrl: './encuesta-enviada.component.css'
 })
 export class EncuestaEnviadaComponent {
 
