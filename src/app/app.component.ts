@@ -10,5 +10,4 @@ import { EncuestasServiceService } from './services/encuestas-service.service';
   providers: [EncuestasServiceService]
 })
 export class AppComponent {
-  title = 'EncuestaFrontIFTS11';
 }

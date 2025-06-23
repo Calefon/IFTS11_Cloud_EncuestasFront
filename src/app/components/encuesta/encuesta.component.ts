@@ -6,12 +6,12 @@ import { IRespData, IRespuesta } from '../../models/respuesta.model';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponentComponent } from '../header-component/header-component.component';
+import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-encuesta',
-  imports: [CommonModule, FormsModule, HeaderComponentComponent],
+  imports: [CommonModule, FormsModule, HeaderComponentComponent, TranslocoModule],
   templateUrl: './encuesta.component.html',
-  styleUrl: './encuesta.component.css',
 })
 export class EncuestaComponent implements OnInit{
   private route = inject(ActivatedRoute);

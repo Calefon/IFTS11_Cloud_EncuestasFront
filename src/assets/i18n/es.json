@@ -1,0 +1,17 @@
+{
+  "name": "Inquiro Encuesta",
+  "title": "Titulo de la Encuesta",
+  "description": "Descripción de la Encuesta",
+  "loading": "Cargando...",
+  "send": "Enviar",
+  "success": {
+    "title":"Encuesta realizada con exito",
+    "text1":"Muchas gracias por participar.",
+    "text2":"Tu opinión es muy importante para nosotros."
+  },
+  "error": {
+    "title":"Error",
+    "text1":"Lo sentimos, la página que buscas no existe.",
+    "text2":"Por favor, verifica la URL o vuelve a la página principal."
+  }
+}

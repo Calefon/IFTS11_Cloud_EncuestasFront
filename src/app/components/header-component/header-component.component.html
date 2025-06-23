@@ -1,4 +1,54 @@
-<header class="flex items-center justify-center gap-2 py-3 bg-indigo-950 text-white w-full">
-  <img src="assets/img/inquiroLogo.webp" alt="Inquiro Logo" class="w-20" />
-  <h1 class="text-4xl font-bold">Inquiro encuesta</h1>
+<header
+  class="flex items-center justify-center py-3 bg-indigo-950 text-white w-full"
+>
+  <div class="flex items-center justify-evenly w-3/4">
+    <div class="flex items-center gap-2">
+      <img
+        src="assets/img/inquiroLogo.webp"
+        alt="Inquiro Logo"
+        class="w-[3rem]"
+      />
+      <h1 class="text-2xl font-bold">{{ "name" | transloco }}</h1>
+    </div>
+
+    <div class="flex items-center gap-4">
+      <button
+        (click)="onToggleTheme()"
+        class="flex items-center justify-center hover:cursor-pointer"
+      >
+        @if(themeService.darkMode()){
+        <img
+          src="assets/svg/dark-mode.svg"
+          alt="dark mode"
+          class="w-[2rem] transition-transform duration-300 ease-in-out"
+        />
+        } @else {
+        <img
+          src="assets/svg/light-mode.svg"
+          alt="light mode"
+          class="w-[2rem] transition-transform duration-300 ease-in-out"
+        />
+        }
+      </button>
+
+      <button
+        class="flex items-center justify-center hover:cursor-pointer"
+        (click)="onToggleLanguage()"
+      >
+        @if(languageService.currentLang === 'en'){
+        <img
+          src="assets/svg/english.svg"
+          alt="english"
+          class="w-[2rem] transition-transform duration-300 ease-in-out"
+        />
+        } @else {
+        <img
+          src="assets/svg/spanish.svg"
+          alt="spanish"
+          class="w-[2rem] transition-transform duration-300 ease-in-out"
+        />
+        }
+      </button>
+    </div>
+  </div>
 </header>
