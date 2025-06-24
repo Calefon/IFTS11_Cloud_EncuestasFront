@@ -3,7 +3,7 @@
   "title": "Survey Title: ",
   "description": "Survey Description: ",
   "loading": "Loading...",
-  "send": "send",
+  "send": "Send",
   "success": {
     "title":"Survey completed successfully",
     "text1":"Thank you very much for participating.",
