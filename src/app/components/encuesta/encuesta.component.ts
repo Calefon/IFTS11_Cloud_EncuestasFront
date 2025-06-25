@@ -40,7 +40,7 @@ export class EncuestaComponent implements OnInit{
 
                   this.encuesta = resp.encuesta[0];
 
-                  this.respuesta.respuestaInquiroPK = this.encuesta.InquiroPK;
+                  this.respuesta.respuestaInquiroPK = this.encuesta.InquiroSK;
                   let respArray : IRespData[] = [];
 
 
