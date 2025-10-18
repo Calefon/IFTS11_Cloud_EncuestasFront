@@ -1,54 +1,100 @@
-<header
-  class="flex items-center justify-center py-3 bg-indigo-950 text-white w-full"
->
-  <div class="flex items-center justify-evenly w-3/4">
-    <div class="flex items-center gap-2">
-      <img
-        src="assets/img/inquiroLogo.png"
-        alt="Inquiro Logo"
-        class="w-[3rem]"
-      />
-      <h1 class="text-2xl font-bold">{{ "name" | transloco }}</h1>
-    </div>
+<header class="flex items-center justify-center w-full bg-[#0B0430]">
+  <nav
+    class="flex flex-col md:flex-row justify-around items-center p-4 text-white font-medium z-50 w-full"
+  >
+    <a href="https://inquiro.site" target="_blank" class="flex justify-center items-center">
+        <img
+          src="assets/img/inquiroLogo.png"
+          alt="inquiro logo"
+          width="60px"
+          height="60px"
+        />
+        <p class="font-medium text-xl">{{ "name" | transloco }}</p>
+    </a>
 
-    <div class="flex items-center gap-4">
+    <div class="flex gap-9">
       <button
-        (click)="onToggleTheme()"
-        class="flex items-center justify-center hover:cursor-pointer"
+        (click)="toggleTheme()"
+        class="flex items-center justify-center hover:cursor-pointer transition"
       >
         @if(themeService.darkMode()){
         <img
           src="assets/svg/dark-mode.svg"
           alt="dark mode"
-          class="w-[2rem] transition-transform duration-300 ease-in-out"
+          class="w-[2.5rem] transition-transform duration-300 ease-in-out"
         />
         } @else {
         <img
           src="assets/svg/light-mode.svg"
           alt="light mode"
-          class="w-[2rem] transition-transform duration-300 ease-in-out"
+          class="w-[2.5rem] transition-transform duration-300 ease-in-out"
         />
         }
       </button>
 
-      <button
-        class="flex items-center justify-center hover:cursor-pointer"
-        (click)="onToggleLanguage()"
-      >
-        @if(languageService.currentLang === 'en'){
-        <img
-          src="assets/svg/english.svg"
-          alt="english"
-          class="w-[2rem] transition-transform duration-300 ease-in-out"
-        />
-        } @else {
-        <img
-          src="assets/svg/spanish.svg"
-          alt="spanish"
-          class="w-[2rem] transition-transform duration-300 ease-in-out"
-        />
+      <!-- Language selector -->
+      <div class="relative">
+        <button
+          id="lang-toggle"
+          type="button"
+          (click)="toggleLangMenu()"
+          class="flex items-center gap-2 hover:bg-[#2A1F5A] p-3 rounded-2xl focus:outline-none"
+          aria-haspopup="listbox"
+          [attr.aria-expanded]="langOpen()"
+          aria-label="Change language"
+        >
+          <span class="text-xl">{{ lang.active().flag }}</span>
+          <span class="font-medium">{{ lang.active().label }}</span>
+          <svg
+            class="size-4 opacity-80"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M5.23 7.21a.75.75 0 011.06.02L10 11.11l3.71-3.88a.75.75 0 111.08 1.04l-4.25 4.44a.75.75 0 01-1.08 0L4.15 8.27a.75.75 0 01.08-1.06z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
+
+        @if (langOpen()) {
+        <ul
+          id="lang-menu"
+          class="absolute right-0 mt-2 w-56 rounded-xl bg-white text-gray-900 shadow-lg ring-1 ring-black/5 overflow-hidden z-50"
+        >
+          @for (l of lang.available; track l.code) {
+          <li>
+            <button
+              type="button"
+              (click)="selectLang(l.code)"
+              class="w-full flex items-center justify-center gap-3 px-4 py-2.5 text-left hover:bg-gray-100 focus:outline-none"
+              role="option"
+              [attr.aria-selected]="lang.is(l.code)"
+            >
+              <span class="text-xl">{{ l.flag }}</span>
+              <span class="flex-1">{{ l.label }}</span>
+              @if (lang.is(l.code)) {
+              <svg
+                class="size-4 text-emerald-600"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.704 5.29a1 1 0 0 1 .006 1.414l-7.07 7.162a1 1 0 0 1-1.43.02L3.3 9.28a1 1 0 0 1 1.41-1.42l3.05 3.03 6.36-6.44a1 1 0 0 1 1.584.84Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              }
+            </button>
+          </li>
+          }
+        </ul>
         }
-      </button>
+      </div>
     </div>
-  </div>
+  </nav>
 </header>

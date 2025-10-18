@@ -5,7 +5,8 @@ export interface IEncuestaResponse{
 
 export interface IEncuesta{
   titulo:string,
-  InquiroPK:string, 
+  descripcion:string,
+  InquiroPK:string,
   fechaCreacion:string,
   preguntas: IPregunta[],
   InquiroSK:string

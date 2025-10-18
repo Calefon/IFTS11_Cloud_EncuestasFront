@@ -1,34 +1,33 @@
 <div class="flex flex-col w-full h-screen">
   <app-header-component></app-header-component>
-  <main
-    class="flex flex-col gap-3 items-center justify-center w-full h-full bg-gray-200 dark:bg-indigo-950"
-  >
-    <form class="flex flex-col items-center justify-evenly w-full h-full">
+  <main class="flex flex-col gap-3 items-center justify-center w-full h-full">
+    <form class="flex flex-col items-center justify-evenly w-3/4 h-full">
       <section
-        class="flex flex-col gap-8 items-center w-3/4 h-[70%] mt-3 overflow-y-scroll scroll-hidden"
+        class="flex flex-col gap-8 items-center w-full md:w-3/4 h-[70%] mt-3 overflow-y-scroll scroll-hidden"
       >
         <div
-          class="flex flex-col w-3/4 gap-4 bg-white/30 backdrop-blur-2xl rounded-4xl px-5 py-8 dark:bg-white/10"
+          class="flex flex-col w-full md:w-3/4 gap-4 bg-white backdrop-blur-2xl rounded-4xl px-5 py-8 dark:bg-gray-100"
         >
-          <h2 class="text-xl font-bold dark:text-white">
-            {{ "title" | transloco }}
-            <span class="text-xm font-normal">{{encuesta.titulo}}</span>
+          <h2
+            class="text-center text-2xl md:text-4xl text-[#0B0430] font-medium"
+          >
+            {{ encuesta.titulo }}
           </h2>
-          <h3 class="text-xl font-bold dark:text-white">
-            {{ "description" | transloco }}
-            <span class="text-xm font-normal"> - </span>
+
+          <h3 class="text-xl md:text-xl text-[#0B0430] font-medium">
+            {{ encuesta.descripcion}}
           </h3>
         </div>
 
         @for (pregunta of encuesta.preguntas; track $index){ @let qIndex =
         $index;
 
-        <div class="flex flex-col w-3/4">
+        <div class="flex flex-col w-full md:w-3/4">
           <!--Para despues <ng-container *ngComponentOutlet=></ng-container>-->
           @let preguntaId = "preguntaId-"+$index; @switch(pregunta.tipoPregunta)
           { @case ("opciones_radio"){
           <div
-            class="flex flex-col gap-3 w-full bg-white/30 backdrop-blur-2xl rounded-4xl px-5 py-8 dark:bg-white/10"
+            class="flex flex-col gap-3 w-full bg-white backdrop-blur-2xl rounded-4xl px-5 py-8 dark:bg-white/10"
           >
             <label
               class="font-bold text-xl dark:text-white"
@@ -58,13 +57,13 @@
           } @case ("abierta"){
 
           <div
-            class="flex flex-col gap-3 w-full bg-white/30 backdrop-blur-2xl rounded-4xl px-5 py-8 dark:bg-white/10 dark:text-white"
+            class="flex flex-col gap-3 w-full bg-white backdrop-blur-2xl rounded-4xl px-5 py-8 dark:bg-white/10 dark:text-white"
           >
             <label class="font-bold text-xl" for="{{ preguntaId }}">{{
               pregunta.pregunta
             }}</label>
             <textarea
-              class="border-gray-300 border rounded-2xl outline-gray-300 text-start w-full h-14 sm:h-32 text-xm px-3 py-2"
+              class="border-gray-300 bg-white dark:bg-transparent border rounded-2xl outline-gray-300 text-start w-full h-14 sm:h-32 text-xm px-3 py-2"
               id="{{ preguntaId }}"
               name="{{ preguntaId }}"
               type="text"
@@ -81,7 +80,7 @@
       </section>
 
       <button
-        class="bg-purple-600 text-white hover:text-gray-200 hover:bg-purple-700 font-bold px-6 py-3 rounded-2xl cursor-pointer text-xl"
+        class="mt-6 justify-center items-center rounded-xl px-20 py-4 text-xl font-medium border transition bg-[#0B0430] hover:bg-[#2A1F5A] dark:bg-gray-200 dark:hover:bg-gray-100 text-white dark:text-[#0B0430]"
         type="submit"
         (click)="enviarRespuesta()"
       >
@@ -89,4 +88,5 @@
       </button>
     </form>
   </main>
+  <app-footer-component></app-footer-component>
 </div>

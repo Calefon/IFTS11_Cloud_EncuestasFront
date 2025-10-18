@@ -1,7 +1,6 @@
 {
-  "name": "Inquiro Encuesta",
-  "title": "Titulo de la Encuesta",
-  "description": "Descripción de la Encuesta",
+  "name": "Inquiro Encuestas",
+  "information": "Más información",
   "loading": "Cargando...",
   "send": "Enviar",
   "success": {
@@ -13,5 +12,30 @@
     "title":"Error",
     "text1":"Lo sentimos, la página que buscas no existe.",
     "text2":"Por favor, verifica la URL o vuelve a la página principal."
+  },
+  "footer": {
+    "brand": {
+      "name": "Inquiro",
+      "description": "Ayudamos a las organizaciones a convertir la retroalimentación en acción. Inquiro te permite diseñar y lanzar encuestas, recopilar respuestas en tiempo real, visualizar resultados con paneles claros y generar recomendaciones impulsadas por IA, para que los equipos puedan tomar decisiones seguras y basadas en datos más rápido."
+    },
+    "links": {
+      "product": {
+        "title": "Producto",
+        "items": {
+          "howItWorks": "Cómo Funciona",
+          "capabilities": "Capacidades Clave",
+          "plans": "Planes de Precios"
+        }
+      },
+      "company": {
+        "title": "Compañía",
+        "items": {
+          "testimonials": "Testimonios",
+          "contact": "Contacto",
+          "privacy": "Privacidad y Términos"
+        }
+      }
+    },
+    "copyright": "© 2025 Inquiro. Todos los derechos reservados."
   }
 }

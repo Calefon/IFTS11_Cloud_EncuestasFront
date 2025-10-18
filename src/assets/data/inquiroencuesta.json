@@ -1,0 +1,37 @@
+{
+  "email": "eze5025@gmail.com",
+  "titulo": "Tipos de madera en el mercado",
+  "descripcion": "Encuesta sobre las preferencias y conocimientos acerca de los diferentes tipos de madera disponibles en el mercado actual.",
+  "preguntas": [
+    {
+      "tipoPregunta": "abierta",
+      "pregunta": "Esto es una pregunta abierta",
+      "opciones": []
+    },
+    {
+      "tipoPregunta": "opciones_radio",
+      "pregunta": "Esto son opciones",
+      "opciones": ["Opcion 1", "Opcion 2", "Opcion 3", "Opcion 4"]
+    },
+    {
+      "tipoPregunta": "abierta",
+      "pregunta": "Esto es una pregunta abierta",
+      "opciones": []
+    },
+    {
+      "tipoPregunta": "opciones_radio",
+      "pregunta": "Esto son opciones",
+      "opciones": ["Opcion 1", "Opcion 2", "Opcion 3", "Opcion 4"]
+    },
+    {
+      "tipoPregunta": "abierta",
+      "pregunta": "Esto es una pregunta abierta",
+      "opciones": []
+    },
+    {
+      "tipoPregunta": "opciones_radio",
+      "pregunta": "Esto son opciones",
+      "opciones": ["Opcion 1", "Opcion 2", "Opcion 3", "Opcion 4"]
+    }
+  ]
+}
