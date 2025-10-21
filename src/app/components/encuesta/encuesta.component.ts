@@ -7,10 +7,11 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponentComponent } from '../header-component/header-component.component';
 import { TranslocoModule } from '@jsverse/transloco';
+import { FooterComponentComponent } from '../footer-component/footer-component.component';
 
 @Component({
   selector: 'app-encuesta',
-  imports: [CommonModule, FormsModule, HeaderComponentComponent, TranslocoModule],
+  imports: [CommonModule, FormsModule, HeaderComponentComponent, FooterComponentComponent,TranslocoModule],
   templateUrl: './encuesta.component.html',
 })
 export class EncuestaComponent implements OnInit{
