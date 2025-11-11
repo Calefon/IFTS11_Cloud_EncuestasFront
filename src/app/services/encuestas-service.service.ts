@@ -9,6 +9,7 @@ import { IRespuesta } from '../models/respuesta.model';
   providedIn: 'root',
 })
 export class EncuestasServiceService {
+
   private _http = inject(HttpClient)
   private _encuestasApiEndpoint = environment.INQUIRO_API_LINK + '/encuestas';
   private _respuestasApiEndpoint = environment.INQUIRO_API_LINK + `/respuestas`;
@@ -18,7 +19,7 @@ export class EncuestasServiceService {
     let linkReq = this._encuestasApiEndpoint+`/${id}`
     return this._http.get<IEncuestaResponse>(linkReq);
   }
-
+  
   postRespuesta(respuesta : IRespuesta){
     let linkReq = this._respuestasApiEndpoint
     return this._http.post<IRespuesta>(linkReq,respuesta);
