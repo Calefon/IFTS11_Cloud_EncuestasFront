@@ -1,0 +1,41 @@
+{
+  "name": "Inquiro Sondaggi",
+  "information": "Maggiori informazioni",
+  "loading": "Caricamento...",
+  "send": "Invia",
+  "success": {
+    "title": "Sondaggio completato con successo",
+    "text1": "Grazie mille per la tua partecipazione.",
+    "text2": "La tua opinione è molto importante per noi."
+  },
+  "error": {
+    "title": "Errore",
+    "text1": "Spiacenti, la pagina che stai cercando non esiste.",
+    "text2": "Controlla l'URL o torna alla pagina principale."
+  },
+  "footer": {
+    "brand": {
+      "name": "Inquiro",
+      "description": "Aiutiamo le organizzazioni a trasformare il feedback in azione. Inquiro ti consente di progettare e lanciare sondaggi, raccogliere risposte in tempo reale, visualizzare i risultati con dashboard chiare e generare raccomandazioni basate sull'IA, affinché i team possano prendere decisioni sicure e basate sui dati più rapidamente."
+    },
+    "links": {
+      "product": {
+        "title": "Prodotto",
+        "items": {
+          "howItWorks": "Come funziona",
+          "capabilities": "Funzionalità principali",
+          "plans": "Piani tariffari"
+        }
+      },
+      "company": {
+        "title": "Azienda",
+        "items": {
+          "testimonials": "Testimonianze",
+          "contact": "Contatto",
+          "privacy": "Privacy e termini"
+        }
+      }
+    },
+    "copyright": "© 2025 Inquiro. Tutti i diritti riservati."
+  }
+}

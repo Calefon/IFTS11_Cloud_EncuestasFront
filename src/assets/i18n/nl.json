@@ -1,0 +1,41 @@
+{
+  "name": "Inquiro Enquêtes",
+  "information": "Meer informatie",
+  "loading": "Bezig met laden...",
+  "send": "Verzenden",
+  "success": {
+    "title": "Enquête succesvol voltooid",
+    "text1": "Hartelijk dank voor uw deelname.",
+    "text2": "Uw mening is erg belangrijk voor ons."
+  },
+  "error": {
+    "title": "Fout",
+    "text1": "Sorry, de pagina die u zoekt bestaat niet.",
+    "text2": "Controleer de URL of ga terug naar de startpagina."
+  },
+  "footer": {
+    "brand": {
+      "name": "Inquiro",
+      "description": "Wij helpen organisaties om feedback om te zetten in actie. Met Inquiro kunt u enquêtes ontwerpen en lanceren, reacties in realtime verzamelen, resultaten visualiseren met duidelijke dashboards en AI-gestuurde aanbevelingen genereren, zodat teams sneller weloverwogen, data-gedreven beslissingen kunnen nemen."
+    },
+    "links": {
+      "product": {
+        "title": "Product",
+        "items": {
+          "howItWorks": "Hoe het werkt",
+          "capabilities": "Belangrijkste functies",
+          "plans": "Prijspakketten"
+        }
+      },
+      "company": {
+        "title": "Bedrijf",
+        "items": {
+          "testimonials": "Getuigenissen",
+          "contact": "Contact",
+          "privacy": "Privacy en voorwaarden"
+        }
+      }
+    },
+    "copyright": "© 2025 Inquiro. Alle rechten voorbehouden."
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "name": "Inquiro Pesquisas",
+  "information": "Mais informações",
+  "loading": "Carregando...",
+  "send": "Enviar",
+  "success": {
+    "title": "Pesquisa concluída com sucesso",
+    "text1": "Muito obrigado por participar.",
+    "text2": "A sua opinião é muito importante para nós."
+  },
+  "error": {
+    "title": "Erro",
+    "text1": "Desculpe, a página que você procura não existe.",
+    "text2": "Por favor, verifique o URL ou volte à página inicial."
+  },
+  "footer": {
+    "brand": {
+      "name": "Inquiro",
+      "description": "Ajudamos as organizações a transformar feedback em ação. O Inquiro permite que você crie e lance pesquisas, colete respostas em tempo real, visualize resultados com painéis claros e gere recomendações baseadas em IA para que as equipes possam tomar decisões seguras e baseadas em dados de forma mais rápida."
+    },
+    "links": {
+      "product": {
+        "title": "Produto",
+        "items": {
+          "howItWorks": "Como funciona",
+          "capabilities": "Recursos principais",
+          "plans": "Planos de preços"
+        }
+      },
+      "company": {
+        "title": "Empresa",
+        "items": {
+          "testimonials": "Depoimentos",
+          "contact": "Contato",
+          "privacy": "Privacidade e termos"
+        }
+      }
+    },
+    "copyright": "© 2025 Inquiro. Todos os direitos reservados."
+  }
+}

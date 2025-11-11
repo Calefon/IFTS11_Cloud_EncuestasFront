@@ -1,17 +1,41 @@
 {
-  "name": "Survey Inquiro",
-  "title": "Survey Title: ",
-  "description": "Survey Description: ",
+  "name": "Inquiro Surveys",
+  "information": "More information",
   "loading": "Loading...",
   "send": "Send",
   "success": {
-    "title":"Survey completed successfully",
-    "text1":"Thank you very much for participating.",
-    "text2":"Your opinion is very important to us."
+    "title": "Survey completed successfully",
+    "text1": "Thank you very much for participating.",
+    "text2": "Your opinion is very important to us."
   },
   "error": {
-    "title":"Error",
-    "text1":"Sorry, the page you are looking for does not exist.",
-    "text2":"Please check the URL or return to the main page."
+    "title": "Error",
+    "text1": "Sorry, the page you are looking for does not exist.",
+    "text2": "Please check the URL or return to the home page."
+  },
+  "footer": {
+    "brand": {
+      "name": "Inquiro",
+      "description": "We help organisations turn feedback into action. Inquiro enables you to design and launch surveys, collect responses in real time, visualise results with clear dashboards, and generate AI-driven recommendations so teams can make confident, data-based decisions faster."
+    },
+    "links": {
+      "product": {
+        "title": "Product",
+        "items": {
+          "howItWorks": "How It Works",
+          "capabilities": "Key Capabilities",
+          "plans": "Pricing Plans"
+        }
+      },
+      "company": {
+        "title": "Company",
+        "items": {
+          "testimonials": "Testimonials",
+          "contact": "Contact",
+          "privacy": "Privacy & Terms"
+        }
+      }
+    },
+    "copyright": "© 2025 Inquiro. All rights reserved."
   }
 }
