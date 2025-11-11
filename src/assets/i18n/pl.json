@@ -1,0 +1,41 @@
+{
+  "name": "Inquiro Ankiety",
+  "information": "Więcej informacji",
+  "loading": "Ładowanie...",
+  "send": "Wyślij",
+  "success": {
+    "title": "Ankieta zakończona pomyślnie",
+    "text1": "Dziękujemy bardzo za udział.",
+    "text2": "Twoja opinia jest dla nas bardzo ważna."
+  },
+  "error": {
+    "title": "Błąd",
+    "text1": "Przepraszamy, strona, której szukasz, nie istnieje.",
+    "text2": "Sprawdź adres URL lub wróć na stronę główną."
+  },
+  "footer": {
+    "brand": {
+      "name": "Inquiro",
+      "description": "Pomagamy organizacjom przekształcać opinie w działania. Inquiro umożliwia projektowanie i uruchamianie ankiet, zbieranie odpowiedzi w czasie rzeczywistym, wizualizowanie wyników za pomocą przejrzystych pulpitów oraz generowanie rekomendacji opartych na sztucznej inteligencji, aby zespoły mogły szybciej podejmować pewne, oparte na danych decyzje."
+    },
+    "links": {
+      "product": {
+        "title": "Produkt",
+        "items": {
+          "howItWorks": "Jak to działa",
+          "capabilities": "Kluczowe funkcje",
+          "plans": "Plany cenowe"
+        }
+      },
+      "company": {
+        "title": "Firma",
+        "items": {
+          "testimonials": "Opinie klientów",
+          "contact": "Kontakt",
+          "privacy": "Prywatność i warunki"
+        }
+      }
+    },
+    "copyright": "© 2025 Inquiro. Wszelkie prawa zastrzeżone."
+  }
+}

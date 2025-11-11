@@ -1,0 +1,41 @@
+{
+  "name": "Inquiro 调查问卷",
+  "information": "更多信息",
+  "loading": "加载中...",
+  "send": "发送",
+  "success": {
+    "title": "问卷已成功提交",
+    "text1": "非常感谢您的参与。",
+    "text2": "您的意见对我们非常重要。"
+  },
+  "error": {
+    "title": "错误",
+    "text1": "抱歉，您访问的页面不存在。",
+    "text2": "请检查网址或返回主页。"
+  },
+  "footer": {
+    "brand": {
+      "name": "Inquiro",
+      "description": "我们帮助组织将反馈转化为行动。Inquiro 让您能够设计并发布调查问卷，实时收集反馈，通过清晰的仪表板可视化结果，并生成基于人工智能的建议，从而帮助团队更快地做出可靠、基于数据的决策。"
+    },
+    "links": {
+      "product": {
+        "title": "产品",
+        "items": {
+          "howItWorks": "工作原理",
+          "capabilities": "核心功能",
+          "plans": "价格方案"
+        }
+      },
+      "company": {
+        "title": "公司",
+        "items": {
+          "testimonials": "用户评价",
+          "contact": "联系我们",
+          "privacy": "隐私与条款"
+        }
+      }
+    },
+    "copyright": "© 2025 Inquiro. 版权所有。"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "name": "Inquiro Umfragen",
+  "information": "Mehr Informationen",
+  "loading": "Wird geladen...",
+  "send": "Senden",
+  "success": {
+    "title": "Umfrage erfolgreich abgeschlossen",
+    "text1": "Vielen Dank für Ihre Teilnahme.",
+    "text2": "Ihre Meinung ist uns sehr wichtig."
+  },
+  "error": {
+    "title": "Fehler",
+    "text1": "Entschuldigung, die von Ihnen gesuchte Seite existiert nicht.",
+    "text2": "Bitte überprüfen Sie die URL oder kehren Sie zur Startseite zurück."
+  },
+  "footer": {
+    "brand": {
+      "name": "Inquiro",
+      "description": "Wir helfen Organisationen, Feedback in Handlungen umzuwandeln. Inquiro ermöglicht es Ihnen, Umfragen zu entwerfen und zu starten, Antworten in Echtzeit zu sammeln, Ergebnisse mit klaren Dashboards zu visualisieren und KI-gestützte Empfehlungen zu generieren, damit Teams schneller fundierte, datenbasierte Entscheidungen treffen können."
+    },
+    "links": {
+      "product": {
+        "title": "Produkt",
+        "items": {
+          "howItWorks": "Wie es funktioniert",
+          "capabilities": "Zentrale Funktionen",
+          "plans": "Preispläne"
+        }
+      },
+      "company": {
+        "title": "Unternehmen",
+        "items": {
+          "testimonials": "Erfahrungsberichte",
+          "contact": "Kontakt",
+          "privacy": "Datenschutz und Bedingungen"
+        }
+      }
+    },
+    "copyright": "© 2025 Inquiro. Alle Rechte vorbehalten."
+  }
+}
