@@ -14,6 +14,12 @@
 
     <div class="flex gap-9">
       <button
+        (click)="toggleDyslexic()"
+        class="flex items-center justify-center hover:cursor-pointer transition dyslexic text-sm p-1"
+      >
+        Modo dislexia
+      </button>
+      <button
         (click)="toggleTheme()"
         class="flex items-center justify-center hover:cursor-pointer transition"
       >
